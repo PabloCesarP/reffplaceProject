@@ -1,34 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}ReffPlace - Dashboard{% endblock %}
 
-    <title>ReffPlace</title>
+{% block content %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+<h2>Dashboard</h2>
 
-<body>
+<div class="card">
+    <h3>Calculadora de custos</h3>
+    <p>
+        Calcule e salve seus custos.
+        {% if total_pedidos %}
+            Você tem {{ total_pedidos }} pedido(s) salvo(s).
+        {% else %}
+            Nenhum pedido salvo ainda.
+        {% endif %}
+    </p>
 
-    <header>
-        <h1>ReffPlace</h1>
-        <p>Sistema de gerenciamento</p>
-    </header>
+    <a href="{{ url_for('pedidos.novo') }}"><button>Novo pedido</button></a>
+    <a href="{{ url_for('pedidos.historico') }}"><button class="secundario">Ver histórico</button></a>
+</div>
 
-    <main>
-
-        <h2>Dashboard</h2>
-
-        <div class="card">
-            <h3>Calculadora de custos</h3>
-            <p>Calcule e salve seus custos.</p>
-
-            <button>Entrar</button>
-        </div>
-
-    </main>
-
-</body>
-</html>
+{% endblock %}

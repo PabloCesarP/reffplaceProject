@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Histórico de pedidos{% endblock %}
+
+{% block content %}
+
+<h2>Histórico de pedidos</h2>
+
+{% if pedidos %}
+<div class="card">
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Cotação</th>
+                <th>Produtos</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in pedidos %}
+            <tr>
+                <td><a href="{{ url_for('pedidos.detalhe', pedido_id=p.id) }}">{{ p.nome }}</a></td>
+                <td>{{ p.data_criacao.strftime('%d/%m/%Y %H:%M') }}</td>
+                <td>{{ p.cotacao }}</td>
+                <td>{{ p.produtos|length }}</td>
+                <td><a href="{{ url_for('pedidos.detalhe', pedido_id=p.id) }}"><button>Ver</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p>Nenhum pedido salvo ainda. <a href="{{ url_for('pedidos.novo') }}">Criar o primeiro</a>.</p>
+{% endif %}
+
+{% endblock %}

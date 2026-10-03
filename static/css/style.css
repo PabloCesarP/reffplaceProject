@@ -34,4 +34,99 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    background: #222;
+    color: white;
+    font-size: 0.95em;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.secundario {
+    background: #666;
+}
+
+button.danger {
+    background: #c0392b;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.card + .card {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.85em;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+thead th {
+    background: #f0f0f0;
+}
+
+tfoot td {
+    font-weight: bold;
+    background: #fafafa;
+}
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.flashes li {
+    background: #fdecea;
+    color: #c0392b;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 8px;
 }
